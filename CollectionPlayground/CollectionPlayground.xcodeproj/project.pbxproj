@@ -17,6 +17,7 @@
 		17064BEF158E716D00966851 /* MyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 17064BEE158E716D00966851 /* MyFlowLayout.m */; };
 		17563D7A1590383E00D23344 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17563D791590383E00D23344 /* QuartzCore.framework */; };
 		175F1D67158E88B100CB8A25 /* PileLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 175F1D66158E88B100CB8A25 /* PileLayout.m */; };
+		17C9509915AE0092005D7E87 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9509815AE0092005D7E87 /* StoreKit.framework */; };
 		17DE6F741591865000BA4818 /* iTunesScrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DE6F731591865000BA4818 /* iTunesScrapper.m */; };
 		17DE6F78159187DD00BA4818 /* iTunesItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DE6F77159187DD00BA4818 /* iTunesItem.m */; };
 		17DE6F7B159189FB00BA4818 /* iTunesItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DE6F7A159189FB00BA4818 /* iTunesItemCell.m */; };
@@ -40,6 +41,7 @@
 		17563D791590383E00D23344 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		175F1D65158E88B100CB8A25 /* PileLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PileLayout.h; sourceTree = "<group>"; };
 		175F1D66158E88B100CB8A25 /* PileLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PileLayout.m; sourceTree = "<group>"; };
+		17C9509815AE0092005D7E87 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		17DE6F721591865000BA4818 /* iTunesScrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesScrapper.h; sourceTree = "<group>"; };
 		17DE6F731591865000BA4818 /* iTunesScrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesScrapper.m; sourceTree = "<group>"; };
 		17DE6F76159187DD00BA4818 /* iTunesItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesItem.h; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C9509915AE0092005D7E87 /* StoreKit.framework in Frameworks */,
 				17563D7A1590383E00D23344 /* QuartzCore.framework in Frameworks */,
 				17064BCC158E67D300966851 /* UIKit.framework in Frameworks */,
 				17064BCE158E67D300966851 /* Foundation.framework in Frameworks */,
@@ -66,6 +69,7 @@
 		17064BBC158E67D300966851 = {
 			isa = PBXGroup;
 			children = (
+				17C9509815AE0092005D7E87 /* StoreKit.framework */,
 				17064BD1158E67D300966851 /* CollectionPlayground */,
 				17064BCA158E67D300966851 /* Frameworks */,
 				17064BC8158E67D300966851 /* Products */,

@@ -31,7 +31,7 @@ static NSString * const moviesFeed = @"http://itunes.apple.com/us/rss/topmovies/
 
                              if (error == nil) {
                                 NSError *jsonError = nil;
-                                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:nil error:&jsonError];
+                                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
                                 NSDictionary *feed = [json objectForKey:@"feed"];
                                 NSArray *entries = [feed objectForKey:@"entry"];
                                 for (NSDictionary *entry in entries) {
@@ -42,6 +42,9 @@ static NSString * const moviesFeed = @"http://itunes.apple.com/us/rss/topmovies/
                                    NSDictionary *imImage = [imImages lastObject];
                                    NSString *url = [imImage objectForKey:@"label"];
                                    item.imageURL = [NSURL URLWithString:url];
+                                   NSDictionary *idField = [entry objectForKey:@"id"];
+                                   NSDictionary *attributes = [idField objectForKey:@"attributes"];
+                                   item.trackId = [attributes objectForKey:@"im:id"];
                                    [result addObject:item];
                                 }
                              }

@@ -9,8 +9,9 @@
 #import "MyCollectionViewController.h"
 #import "iTunesScrapper.h"
 #import "iTunesItemCell.h"
+#import <StoreKit/StoreKit.h>
 
-@interface MyCollectionViewController ()
+@interface MyCollectionViewController () <SKStoreProductViewControllerDelegate>
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) NSArray *layouts;
@@ -186,10 +187,18 @@
    return cell;
 }
 
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//   self.count--;
-//   [collectionView deleteItemsAtIndexPaths:@[indexPath]];
-//}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+   iTunesItem *item = [self.items objectAtIndex:indexPath.item];
+   SKStoreProductViewController *vc = [[SKStoreProductViewController alloc] init];
+   NSDictionary *params = @{ SKStoreProductParameterITunesItemIdentifier : item.trackId };
+   [vc loadProductWithParameters:params completionBlock:^(BOOL result, NSError *error) {
+      if (result) {
+         [self presentViewController:vc animated:YES completion:nil];
+      } else {
+         NSLog(@"error = %@", error);
+      }
+   }];
+}
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
    iTunesItem *item = [self.items objectAtIndex:indexPath.item];
@@ -200,6 +209,12 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
    return UIEdgeInsetsMake(10, 10, 10, 10);
+}
+
+#pragma mark - SKStoreProductViewControllerDelegate
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

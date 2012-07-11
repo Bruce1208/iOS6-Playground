@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSURL *imageURL;
+@property (nonatomic, strong) NSString *trackId;
 
 @end
