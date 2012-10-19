@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1703114C1631F18F003CEF58 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1703114B1631F18F003CEF58 /* Default-568h@2x.png */; };
 		17064BCC158E67D300966851 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17064BCB158E67D300966851 /* UIKit.framework */; };
 		17064BCE158E67D300966851 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17064BCD158E67D300966851 /* Foundation.framework */; };
 		17064BD0158E67D300966851 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17064BCF158E67D300966851 /* CoreGraphics.framework */; };
@@ -14,7 +15,6 @@
 		17064BD8158E67D300966851 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17064BD7158E67D300966851 /* main.m */; };
 		17064BDC158E67D300966851 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17064BDB158E67D300966851 /* AppDelegate.m */; };
 		17064BE8158E692600966851 /* MyCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17064BE7158E692600966851 /* MyCollectionViewController.m */; };
-		17064BEF158E716D00966851 /* MyFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 17064BEE158E716D00966851 /* MyFlowLayout.m */; };
 		17563D7A1590383E00D23344 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17563D791590383E00D23344 /* QuartzCore.framework */; };
 		175F1D67158E88B100CB8A25 /* PileLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 175F1D66158E88B100CB8A25 /* PileLayout.m */; };
 		17C9509915AE0092005D7E87 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17C9509815AE0092005D7E87 /* StoreKit.framework */; };
@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1703114B1631F18F003CEF58 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		17064BC7158E67D300966851 /* CollectionPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17064BCB158E67D300966851 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17064BCD158E67D300966851 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -36,8 +37,6 @@
 		17064BDB158E67D300966851 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		17064BE6158E692600966851 /* MyCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewController.h; sourceTree = "<group>"; };
 		17064BE7158E692600966851 /* MyCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewController.m; sourceTree = "<group>"; };
-		17064BED158E716D00966851 /* MyFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFlowLayout.h; sourceTree = "<group>"; };
-		17064BEE158E716D00966851 /* MyFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFlowLayout.m; sourceTree = "<group>"; };
 		17563D791590383E00D23344 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		175F1D65158E88B100CB8A25 /* PileLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PileLayout.h; sourceTree = "<group>"; };
 		175F1D66158E88B100CB8A25 /* PileLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PileLayout.m; sourceTree = "<group>"; };
@@ -66,9 +65,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1703114E1631FAE5003CEF58 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				17064BE6158E692600966851 /* MyCollectionViewController.h */,
+				17064BE7158E692600966851 /* MyCollectionViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1703114F1631FAEB003CEF58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17DE6F79159189FB00BA4818 /* iTunesItemCell.h */,
+				17DE6F7A159189FB00BA4818 /* iTunesItemCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		170311501631FAF0003CEF58 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17DE6F76159187DD00BA4818 /* iTunesItem.h */,
+				17DE6F77159187DD00BA4818 /* iTunesItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		170311511631FB2C003CEF58 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				175F1D65158E88B100CB8A25 /* PileLayout.h */,
+				175F1D66158E88B100CB8A25 /* PileLayout.m */,
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
 		17064BBC158E67D300966851 = {
 			isa = PBXGroup;
 			children = (
+				1703114B1631F18F003CEF58 /* Default-568h@2x.png */,
 				17C9509815AE0092005D7E87 /* StoreKit.framework */,
 				17064BD1158E67D300966851 /* CollectionPlayground */,
 				17064BCA158E67D300966851 /* Frameworks */,
@@ -98,21 +134,15 @@
 		17064BD1158E67D300966851 /* CollectionPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				170311511631FB2C003CEF58 /* Layouts */,
+				170311501631FAF0003CEF58 /* Model */,
+				1703114F1631FAEB003CEF58 /* View */,
+				1703114E1631FAE5003CEF58 /* Controller */,
 				17064BDA158E67D300966851 /* AppDelegate.h */,
 				17064BDB158E67D300966851 /* AppDelegate.m */,
-				17064BD2158E67D300966851 /* Supporting Files */,
-				17064BE6158E692600966851 /* MyCollectionViewController.h */,
-				17064BE7158E692600966851 /* MyCollectionViewController.m */,
-				17064BED158E716D00966851 /* MyFlowLayout.h */,
-				17064BEE158E716D00966851 /* MyFlowLayout.m */,
-				175F1D65158E88B100CB8A25 /* PileLayout.h */,
-				175F1D66158E88B100CB8A25 /* PileLayout.m */,
 				17DE6F721591865000BA4818 /* iTunesScrapper.h */,
 				17DE6F731591865000BA4818 /* iTunesScrapper.m */,
-				17DE6F76159187DD00BA4818 /* iTunesItem.h */,
-				17DE6F77159187DD00BA4818 /* iTunesItem.m */,
-				17DE6F79159189FB00BA4818 /* iTunesItemCell.h */,
-				17DE6F7A159189FB00BA4818 /* iTunesItemCell.m */,
+				17064BD2158E67D300966851 /* Supporting Files */,
 			);
 			path = CollectionPlayground;
 			sourceTree = "<group>";
@@ -180,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17064BD6158E67D300966851 /* InfoPlist.strings in Resources */,
+				1703114C1631F18F003CEF58 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +224,6 @@
 				17064BD8158E67D300966851 /* main.m in Sources */,
 				17064BDC158E67D300966851 /* AppDelegate.m in Sources */,
 				17064BE8158E692600966851 /* MyCollectionViewController.m in Sources */,
-				17064BEF158E716D00966851 /* MyFlowLayout.m in Sources */,
 				175F1D67158E88B100CB8A25 /* PileLayout.m in Sources */,
 				17DE6F741591865000BA4818 /* iTunesScrapper.m in Sources */,
 				17DE6F78159187DD00BA4818 /* iTunesItem.m in Sources */,

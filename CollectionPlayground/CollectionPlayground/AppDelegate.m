@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MyCollectionViewController.h"
-#import "MyFlowLayout.h"
 
 @implementation AppDelegate
 
