@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PileLayout.h"
+#import <StoreKit/StoreKit.h>
 
-@interface MyCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, PileLayoutDelegate>
+@interface MyCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, PileLayoutDelegate, SKStoreProductViewControllerDelegate>
 
 + (UICollectionViewFlowLayout *)flowLayout;
 + (PileLayout *)stackLayout;

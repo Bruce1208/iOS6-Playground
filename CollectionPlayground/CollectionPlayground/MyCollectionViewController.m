@@ -190,6 +190,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
    iTunesItem *item = [self.items objectAtIndex:indexPath.item];
    SKStoreProductViewController *vc = [[SKStoreProductViewController alloc] init];
+   vc.delegate = self;
    NSDictionary *params = @{ SKStoreProductParameterITunesItemIdentifier : item.trackId };
    [vc loadProductWithParameters:params completionBlock:^(BOOL result, NSError *error) {
       if (result) {
