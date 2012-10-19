@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface iTunesItemCell : UICollectionViewCell
 
 @property (nonatomic, assign) CGFloat padding;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) CALayer *shadowLayer;
+@property (nonatomic, strong) UILabel *titleLabel;
 
 @end

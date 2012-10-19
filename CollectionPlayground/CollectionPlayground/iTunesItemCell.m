@@ -19,6 +19,11 @@
        self.padding = 0;
        self.imageView = [[UIImageView alloc] init];
        [self.contentView addSubview:self.imageView];
+       self.titleLabel = [[UILabel alloc] init];
+       [self.contentView addSubview:self.titleLabel];
+
+       self.selectedBackgroundView = [[UIView alloc] init];
+       self.selectedBackgroundView.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.4];
     }
     return self;
 }
@@ -27,15 +32,11 @@
    self.shadowLayer.frame = self.bounds;
 
    self.imageView.frame = CGRectMake(self.padding, self.padding, self.imageView.image.size.width, self.imageView.image.size.height);
-}
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+   CGFloat textHeight = 20;
+   self.titleLabel.frame = CGRectMake(0, self.frame.size.height - textHeight, self.frame.size.width, textHeight);
+
+   self.selectedBackgroundView.frame = self.bounds;
 }
-*/
 
 @end

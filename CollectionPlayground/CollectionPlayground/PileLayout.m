@@ -79,7 +79,11 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180 / M_PI;};
       attr.transform3D = CATransform3DMakeRotation(angle, 0, 0, 1);
    }
 
-   attr.zIndex = indexPath.item * 2;
+   NSInteger itemsInSectionCount = [self.collectionView numberOfItemsInSection:indexPath.section];
+   NSInteger desiredZIndex = itemsInSectionCount - indexPath.item;
+   //   attr.zIndex = desiredZIndex; // zIndex isn't respected when changing between layouts
+   attr.transform3D = CATransform3DConcat(attr.transform3D, CATransform3DMakeTranslation(0, 0, desiredZIndex)); // Achieve the desired z order with a transform
+
    return attr;
 }
 

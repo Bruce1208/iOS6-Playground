@@ -9,7 +9,8 @@
 #import "MyCollectionViewController.h"
 #import "iTunesScrapper.h"
 #import "iTunesItemCell.h"
-#import <StoreKit/StoreKit.h>
+
+#define PADDING 1
 
 @interface MyCollectionViewController () <SKStoreProductViewControllerDelegate>
 
@@ -84,9 +85,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
-   self.title = @"My Collection";
-   self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
+   self.title = @"Top Movies";
    [self.collectionView registerClass:[iTunesItemCell class] forCellWithReuseIdentifier:@"Cell"];
+   self.collectionView.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
    self.layouts = @[[[self class] flowLayout],
    [[self class] stackLayout], [[self class] askewLayout],
    [[self class] stackLayout], [[self class] spinLayout],
@@ -102,6 +103,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+   [super viewDidAppear:animated];
+   
    [[iTunesScrapper sharedInstance] topMovies:^(NSArray *movies) {
       NSOperation *finalize = [NSBlockOperation blockOperationWithBlock:^{
          self.items = movies;
@@ -131,10 +134,7 @@
 }
 
 - (void)swapTapped:(id)sender {
-   _layoutIndex++;
-   if (_layoutIndex >= self.layouts.count) {
-      _layoutIndex = 0;
-   }
+   _layoutIndex = (++_layoutIndex % self.layouts.count);
 
    UICollectionViewLayout *layout = [self.layouts objectAtIndex:_layoutIndex];
    [self.collectionView setCollectionViewLayout:layout animated:YES];
@@ -156,6 +156,8 @@
 {
     return YES;
 }
+
+#pragma mark - UICollectionViewDatasource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
    return 1;
@@ -187,6 +189,8 @@
    return cell;
 }
 
+#pragma mark - UICollectionViewDelegate
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
    iTunesItem *item = [self.items objectAtIndex:indexPath.item];
    SKStoreProductViewController *vc = [[SKStoreProductViewController alloc] init];
@@ -204,7 +208,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
    iTunesItem *item = [self.items objectAtIndex:indexPath.item];
    CGSize size = item.image.size;
-   CGFloat padding = 4;
+   CGFloat padding = PADDING;
    return CGSizeMake(size.width + padding * 2, size.height + padding * 2);
 }
 
