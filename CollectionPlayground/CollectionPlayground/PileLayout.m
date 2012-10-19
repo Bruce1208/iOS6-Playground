@@ -62,17 +62,14 @@ CGFloat RadiansToDegrees(CGFloat radians) {return radians * 180 / M_PI;};
          CGFloat angle = DegreesToRadians(2 * indexPath.item);
          attr.transform3D = CATransform3DMakeRotation(angle, 0, 0, 1);
       } else if (_layoutStyle == PileLayoutStyleSpin) {
-         CGFloat angle = DegreesToRadians(indexPath.item * 360 / [self.collectionView numberOfItemsInSection:indexPath.section]);
+         CGFloat angle = DegreesToRadians(indexPath.item * 360.0 / [self.collectionView numberOfItemsInSection:indexPath.section]);
          attr.transform3D = CATransform3DMakeRotation(angle, 0, 0, 1);
       }
    } else if (_layoutStyle == PileLayoutStyleFan) {
       NSUInteger count = [self.collectionView numberOfItemsInSection:indexPath.section];
       CGFloat factor = (indexPath.item - (count / 2.0)) / count;
-      NSLog(@"%d - %f", indexPath.item, factor);
 
-      // This needs to be rethought and the z indexing doesn't make sense
-
-      attr.center = CGPointMake(CGRectGetMidX(self.collectionView.frame) + factor * 140,
+      attr.center = CGPointMake(CGRectGetMidX(self.collectionView.frame) + factor * 240,
                                 CGRectGetMidY(self.collectionView.frame));
 
       CGFloat angle = DegreesToRadians(factor * 60);

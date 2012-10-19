@@ -173,18 +173,19 @@
 
    iTunesItem *item = [self.items objectAtIndex:indexPath.item];
    cell.imageView.image = item.image;
-   cell.padding = 4;
+   cell.titleLabel.text = [NSString stringWithFormat:@"Item %d", indexPath.row];
+   cell.padding = PADDING;
 
-//   if (cell.shadowLayer == nil) {
-//      CALayer *shadowLayer = [CALayer layer];
-//      shadowLayer.frame = cell.bounds;
-//      shadowLayer.backgroundColor = [UIColor orangeColor].CGColor;
-//      shadowLayer.shadowColor = [UIColor blackColor].CGColor;
-//      shadowLayer.shadowOffset = CGSizeMake(0, 0);
-//      shadowLayer.shadowOpacity = 0.3;
-//      shadowLayer.shadowRadius = 4;
-//      [cell.layer insertSublayer:shadowLayer atIndex:0];
-//   }
+   if (cell.shadowLayer == nil) {
+      CALayer *shadowLayer = [CALayer layer];
+      shadowLayer.frame = cell.bounds;
+      shadowLayer.backgroundColor = [UIColor orangeColor].CGColor;
+      shadowLayer.shadowColor = [UIColor blackColor].CGColor;
+      shadowLayer.shadowOffset = CGSizeMake(0, 2);
+      shadowLayer.shadowOpacity = 0.8;
+      shadowLayer.shadowRadius = 4;
+      [cell.layer insertSublayer:shadowLayer atIndex:0];
+   }
 
    return cell;
 }
